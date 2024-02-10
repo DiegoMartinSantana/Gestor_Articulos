@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{59FD16D6-920D-479F-8B1C-C1CC96A2853B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SistemaProductos</RootNamespace>
+    <AssemblyName>SistemaProductos</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Agregar_Articulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Agregar_Articulo.Designer.cs">
+      <DependentUpon>Agregar_Articulo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ArticuloDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ArticuloDetalle.Designer.cs">
+      <DependentUpon>ArticuloDetalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema Productos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sistema Productos.Designer.cs">
+      <DependentUpon>Sistema Productos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Agregar_Articulo.resx">
+      <DependentUpon>Agregar_Articulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ArticuloDetalle.resx">
+      <DependentUpon>ArticuloDetalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sistema Productos.resx">
+      <DependentUpon>Sistema Productos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AccesoBD\AccesoBD.csproj">
+      <Project>{acab3a14-bc11-4dc5-80d2-45939cdadd1b}</Project>
+      <Name>AccesoBD</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gestor4\GestorArticulos.csproj">
+      <Project>{bd0ed129-5801-429c-99c8-d994322d1e29}</Project>
+      <Name>GestorArticulos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Producto\Producto.csproj">
+      <Project>{563b9353-aaad-496b-a400-b50f07799121}</Project>
+      <Name>Producto</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
